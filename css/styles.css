@@ -1,67 +1,66 @@
-@keyframes myfirst {
-  0% {
-    bottom: 0px;
-  }
-  25% {
-    bottom: 20px;
-  }
-  50% {
-    bottom: 0px;
-  }
-  75% {
-    bottom: -20px;
-  }
-  100% {
-    bottom: 0px;
-  }
+:root {
+  --blue: #4284f4;
+  --red: #eb4236;
+  --yellow: #fcbc05;
+  --green: #34a854;
+
+  --size: 1rem;
+  font-size: 2.5rem;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.google-loader {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: var(--size);
+  transform: translateY(-50%);
 }
 
-.dot1 {
-  height: 25px;
-  width: 25px;
-  background-color: blue;
+.dot {
+  background-color: grey;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
-  position: relative;
-  display: block;
-  animation: myfirst 1.6s linear infinite;
+}
+.dot {
+  animation: ani 1s ease-in-out infinite alternate forwards;
 }
 
-.dot2 {
-  height: 25px;
-  width: 25px;
-  background-color: red;
-  border-radius: 50%;
-  position: relative;
-  display: block;
-  animation: myfirst 1.8s linear infinite;
+.blue {
+  background-color: var(--blue);
+  animation-delay: 0.2s;
+}
+.red {
+  background-color: var(--red);
+  animation-delay: 0.4s;
+}
+.yellow {
+  background-color: var(--yellow);
+  animation-delay: 0.6s;
+}
+.green {
+  background-color: var(--green);
+  animation-delay: 0.8s;
 }
 
-.dot3 {
-  height: 25px;
-  width: 25px;
-  background-color: yellow;
-  border-radius: 50%;
-  position: relative;
-  display: block;
-  animation: myfirst 2.1s linear infinite;
-}
-
-.dot4 {
-  height: 25px;
-  width: 25px;
-  background-color: green;
-  border-radius: 50%;
-  position: relative;
-  display: block;
-  animation: myfirst 2.4s linear infinite;
-}
-
-.row-animation {
-  height: 100vh;
-  text-align: center;
-}
-
-.col {
-  align-self: center;
-  text-align: center;
+@keyframes ani {
+  to {
+    transform: translateY(1rem);
+  }
 }
